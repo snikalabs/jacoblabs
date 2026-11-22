@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roblox with Claude Code</title>
+<style>
+  :root { --bg: #f6f3ec; --card: #ffffff; --ink: #22252b; --soft: #5d6370; --line: #e2ddd1; --accent: #c4562f; --accent-soft: #fbe9e1; --good: #2e7d4f; --good-soft: #e5f2ea; --warn: #a86a12; --warn-soft: #fbf0dc; --code: #efebe1; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #15171c; --card: #1d2027; --ink: #e9e6df; --soft: #a0a6b2; --line: #2e323b; --accent: #ee8a62; --accent-soft: #3a2620; --good: #6fc490; --good-soft: #1e2e25; --warn: #e3b058; --warn-soft: #33291a; --code: #262932; }
+  }
+  :root[data-theme="dark"] { --bg: #15171c; --card: #1d2027; --ink: #e9e6df; --soft: #a0a6b2; --line: #2e323b; --accent: #ee8a62; --accent-soft: #3a2620; --good: #6fc490; --good-soft: #1e2e25; --warn: #e3b058; --warn-soft: #33291a; --code: #262932; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Georgia, "Times New Roman", serif; }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 16px 4rem; }
+  h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 .5rem; text-wrap: balance; }
+  h2 { font: 600 .82rem/1.4 ui-monospace, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); border-bottom: 1px solid var(--line); padding-bottom: .4rem; margin: 2.6rem 0 1rem; }
+  p { margin: 0 0 .9rem; }
+  .lede { font-size: 1.15rem; color: var(--soft); }
+  .meta { font: .8rem ui-monospace, Consolas, monospace; color: var(--soft); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; margin: 1rem 0; }
+  .note { border-left: 4px solid var(--warn); background: var(--warn-soft); border-radius: 0 10px 10px 0; padding: .8rem 1.1rem; margin: 1rem 0; }
+  .ok { border-left: 4px solid var(--good); background: var(--good-soft); border-radius: 0 10px 10px 0; padding: .8rem 1.1rem; margin: 1rem 0; }
+  ol, ul { padding-left: 1.3rem; margin: 0 0 .9rem; }
+  li { margin: .45rem 0; }
+  code { background: var(--code); padding: .08em .4em; border-radius: 4px; font: .86em ui-monospace, Consolas, monospace; }
+  pre { background: var(--code); border-radius: 8px; padding: .8rem 1rem; overflow-x: auto; font: .86rem/1.5 ui-monospace, Consolas, monospace; margin: .6rem 0 1rem; }
+  a { color: var(--accent); }
+  .steps li::marker { font-weight: 700; color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Making Roblox games with Claude Code</h1>
+  <p class="lede">A short set-up guide for a teenager starting out, and the adult helping them. It gets Claude Code talking to Roblox Studio, then says how to work so the first games actually get finished.</p>
+  <p class="meta">Written 21 November 2026 · the steps come from Roblox's and Rojo's own pages (linked at the end) and were not run while writing this, so follow the official page if a menu name differs</p>
+
+  <div class="note"><b>Before anything else: whose account.</b> Claude's terms require the account holder to be 18 or over. For anyone younger, the Claude account belongs to a parent or guardian, who supervises its use.</div>
+
+  <h2>1. The simple set-up</h2>
+  <p>Roblox Studio can connect to Claude Code directly. No extra tools are needed to begin.</p>
+  <ol class="steps">
+    <li><b>Install Roblox Studio.</b> It is free. Sign in with the Roblox account the games will be made on.</li>
+    <li><b>Install Claude Code</b> on the same computer and sign in.</li>
+    <li><b>Connect them.</b> In Studio, turn on <b>Enable Studio as MCP server</b>. Then open <b>Assistant Settings → MCP Servers</b> and use <b>quick connect</b>, which lists Claude Code. A green indicator shows when it is connected.</li>
+    <li><b>Open a place in Studio, start Claude Code, and ask for something small.</b></li>
+  </ol>
+  <div class="card">
+    <b>Good first asks</b>
+    <ul>
+      <li>"Make a red part that resets the player when they touch it."</li>
+      <li>"Add a coin that gives 10 points and disappears, then comes back after 5 seconds."</li>
+      <li>"Make a door that opens when the player walks up to it."</li>
+    </ul>
+  </div>
+  <div class="note"><b>Roblox's own warning.</b> A connected client can read and change whatever place is open in Studio. Connect it only to your own projects, and only to tools you trust.</div>
+
+  <h2>2. How to work so games get finished</h2>
+  <ul>
+    <li><b>Start tiny.</b> An obstacle course with five stages beats a half-built open world. Finish it, publish it, then make the next one bigger.</li>
+    <li><b>One change at a time.</b> Ask for one thing, play-test it in Studio, then ask for the next.</li>
+    <li><b>Say exactly what happened.</b> "When I touch the coin nothing happens and the Output window says 'attempt to index nil'" gets a fix. "It's broken" gets a guess.</li>
+    <li><b>Ask Claude to explain what it wrote.</b> Roblox games are written in a language called Luau. Reading the explanations is the fastest way to learn it.</li>
+    <li><b>Say what "done" looks like.</b> "Done is: I can jump on all five platforms and reach the flag."</li>
+    <li><b>Keep a list of ideas somewhere else.</b> New ideas arrive faster than games get built. Write them down and stay on the game in hand.</li>
+  </ul>
+
+  <h2>3. The step up: the game as files</h2>
+  <p>Once two or three small games are done, the next step is to keep a game as ordinary files on the computer. Claude can then read and change the whole project at once, and Git can save every version. The tool for this is <b>Rojo</b>, installed through a small tool manager called <b>Rokit</b>.</p>
+  <ol class="steps">
+    <li>Install Rokit (its page has a one-line installer for Windows and for Mac).</li>
+    <li>Add Rojo:
+<pre>rokit add rojo-rbx/rojo
+rokit install</pre></li>
+    <li>Install Rojo's Studio half:
+<pre>rojo plugin install</pre></li>
+    <li>Make a project and start syncing it into Studio:
+<pre>rojo init my-game
+cd my-game
+rojo serve</pre>
+      Then connect from the Rojo plugin inside Studio.</li>
+  </ol>
+  <p>Leave this until the simple set-up feels easy. It is how experienced Roblox developers work, and it is not needed for a first game.</p>
+
+  <h2>4. Is Roblox a good place to start?</h2>
+  <div class="ok">It is a real choice, for three reasons: the audience is already there, publishing is one button, and Roblox pays creators whose games are played.</div>
+  <p>Be honest about the odds: most Roblox games earn little or nothing. Treat it as the best way to learn to make and ship real games in front of real players. Anything it earns is a bonus.</p>
+
+  <h2>5. Publishing and safety</h2>
+  <ul>
+    <li>Publishing a game needs a Roblox account. Roblox has its own age rules and parental controls, set on the account.</li>
+    <li>Earning money on Roblox has its own age and identity requirements. Check Roblox's current rules before planning around it.</li>
+    <li>Never put passwords, real names or addresses into a game, a script or a chat with an AI.</li>
+  </ul>
+
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://create.roblox.com/docs/studio/mcp">Connect to the Roblox Studio MCP server</a> (Roblox docs)</li>
+    <li><a href="https://create.roblox.com/docs/projects/rojo">Rojo</a> (Roblox docs)</li>
+    <li><a href="https://rojo.space/docs/v7/getting-started/installation/">Rojo installation</a></li>
+    <li><a href="https://github.com/rojo-rbx/rokit">Rokit</a></li>
+    <li><a href="https://github.com/Roblox/studio-rust-mcp-server">Roblox studio-rust-mcp-server</a> (the older connection, kept for reference)</li>
+  </ul>
+</main>
+</body>
+</html>
